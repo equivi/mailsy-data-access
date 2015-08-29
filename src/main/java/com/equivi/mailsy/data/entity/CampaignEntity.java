@@ -1,12 +1,7 @@
 package com.equivi.mailsy.data.entity;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +10,7 @@ import java.util.List;
 public class CampaignEntity extends AuditableEntity {
     private static final long serialVersionUID = 3147431369479751792L;
 
-    //This uuid as identifier at external party such as mailgun
+    //This uuid as identifier at external party such as com.equivi.channel.email.mailgun
     @Column(name = "campaign_uuid", length = 50)
     private String campaignUUID;
 
