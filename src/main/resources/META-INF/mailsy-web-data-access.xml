@@ -16,7 +16,7 @@
           class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
         <property name="database" value="MYSQL"/>
         <property name="showSql" value="false"/>
-        <property name="generateDdl" value="true"/>
+        <property name="generateDdl" value="false"/>
     </bean>
 
     <bean id="entityManagerFactorydEmailerWeb"
@@ -53,5 +53,11 @@
         <property name="password" value="${jdbc.password}"/>
     </bean>
 
+    <!--Flyway configuration-->
+    <bean id="flyway" class="org.flywaydb.core.Flyway" init-method="migrate">
+        <property name="baselineOnMigrate" value="true" />
+        <property name="locations" value="classpath:db/" />
+        <property name="dataSource" ref="dataSourcedEmailerWeb" />
+    </bean>
 
 </beans>
