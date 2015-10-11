@@ -102,15 +102,15 @@ DROP TABLE IF EXISTS `q01_quota`;
 
 CREATE TABLE `q01_quota` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `current_emails_sent` bigint(20) DEFAULT NULL,
+  `current_emails_verified` bigint(20) DEFAULT NULL,
+  `email_sending_quota` bigint(20) DEFAULT NULL,
+  `email_verify_quota` bigint(20) DEFAULT NULL,
   `version` bigint(20) DEFAULT NULL,
   `created_by` bigint(20) DEFAULT NULL,
   `created_date_time` datetime DEFAULT NULL,
   `last_updated_by` bigint(20) DEFAULT NULL,
   `last_updated_date_time` datetime DEFAULT NULL,
-  `current_emails_sent` bigint(20) DEFAULT NULL,
-  `current_emails_verified` bigint(20) DEFAULT NULL,
-  `email_sending_quota` bigint(20) DEFAULT NULL,
-  `email_verify_quota` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
