@@ -34,17 +34,6 @@
         <property name="defaultTimeout" value="${transaction.timeout}"/>
     </bean>
 
-
-    <bean id="serviceDataPropertyConfigurer"
-          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <list>
-                <value>file:/opt/demailer/conf/demailer_web_db.properties</value>
-                <value>file:/opt/demailer/conf/email_setup.properties</value>
-            </list>
-        </property>
-    </bean>
-
     <bean id="dataSourcedEmailerWeb"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${jdbc.driverClassName}"/>
